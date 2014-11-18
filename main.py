@@ -20,6 +20,9 @@ YO_API_TOKEN = '42d7af4f-7d2c-4396-b768-188d10fcb27c'
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+    return "Hello world!"
 
 @app.route("/yo/")
 def yo():
