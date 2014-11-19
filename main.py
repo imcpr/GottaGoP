@@ -11,6 +11,7 @@ import json
 import sys
 import requests
 from flask import request, Flask
+import os
 
 
 YO_API_TOKEN = '42d7af4f-7d2c-4396-b768-188d10fcb27c'
@@ -62,4 +63,5 @@ def yo():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
